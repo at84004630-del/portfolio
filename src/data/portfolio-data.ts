@@ -48,7 +48,7 @@ export const PORTFOLIO_DATA = {
   personal: {
     name: "Abhinav Tripathi",
     role: "Python & Java Developer",
-    secondaryRole: "Backend Architect & Multi-Agent AI Systems Specialist",
+    secondaryRole: "Backend & AI Systems Developer",
     email: "at84004630@gmail.com",
     location: "Lucknow, India",
     github: "https://github.com/at84004630-del",
@@ -58,38 +58,31 @@ export const PORTFOLIO_DATA = {
     resumePdf: "/Abhinav_Tripathi_Resume.pdf",
     availability: "Available for Software Engineering Roles & Internships",
     summary:
-      "Python & Java Developer and MCA scholar at Amity University Online (BCA Graduate, Amity University Lucknow) specializing in application development, robust backend architectures, and multi-agent AI systems. Proven track record engineering award-shortlisted platforms across fintech, healthcare incident remediation, and on-device machine learning with full data privacy compliance.",
+      "Python & Java Developer and MCA scholar at Amity University Online (BCA Graduate, Amity University Lucknow) specializing in application development, robust backend architectures, and intelligent software systems.",
   },
-
-  stats: [
-    { value: "4.2 min", label: "UPI Turnaround", subtext: "Slashed from 30 days" },
-    { value: "45 TOPS", label: "NPU Acceleration", subtext: "1.4W power envelope" },
-    { value: "90 sec", label: "AST Code Synthesis", subtext: "Automated patch generation" },
-    { value: "16 / 16", label: "Passed Tests", subtext: "Zero PHI data leakage" },
-  ],
 
   about: {
     bio: [
-      "I am a Python & Java Developer and MCA scholar with a rigorous engineering mindset focused on building high-performance backend systems, asynchronous architectures, and deterministic multi-agent AI workflows.",
-      "My work spans high-stakes domains—from banking platforms shortlisted in the national SBI Hackathon @ Global Fintech Fest 2026 to automated healthcare software remediation recognized at IBM Bob 2.0 Hackathon, and 100% on-device clinical intelligence suites deployed onto Qualcomm Snapdragon X Elite NPUs.",
-      "I prioritize architectural rigor: zero-trust data privacy, deterministic guardrails (DPDPA 2023, RBI FREE-AI, HIPAA §164.312, EU AI Act), memory-efficient execution, and clean, maintainable code.",
+      "I am a Python & Java Developer and MCA scholar with a strong engineering mindset focused on building high-performance backend systems, asynchronous APIs, and intelligent applications.",
+      "My work includes engineering innovative platforms recognized at hackathons such as SBI Hackathon @ Global Fintech Fest and IBM Bob 2.0 Hackathon, alongside developing on-device edge AI and machine learning solutions.",
+      "I value writing clean, readable, and maintainable code with robust testing, structured error handling, and solid computer science principles.",
     ],
     pillars: [
       {
         title: "Robust Backend Architecture",
-        desc: "Engineering high-throughput, asynchronous backends with FastAPI, RESTful APIs, SSE streaming, and relational database schemas with SQLAlchemy ORM.",
+        desc: "Engineering high-throughput, asynchronous backends with FastAPI, RESTful APIs, and relational database schemas with SQLAlchemy ORM.",
       },
       {
         title: "Multi-Agent AI Orchestration",
-        desc: "Designing collaborative 'One Face, Many Brains' agent swarms using LangGraph, deterministic veto engines, and structured JSON schema validations.",
+        desc: "Designing collaborative multi-agent workflows using LangGraph and structured validations.",
       },
       {
-        title: "Edge AI & Hardware NPUs",
-        desc: "Quantizing and executing LLMs and vision models on edge silicon using Qualcomm AI Hub and ONNX/QNN Runtime within ultra-low wattage constraints.",
+        title: "Edge AI & Machine Learning",
+        desc: "Quantizing and executing machine learning models on edge hardware using Qualcomm AI Hub and ONNX Runtime.",
       },
       {
-        title: "Privacy & Compliance First",
-        desc: "Ensuring air-gapped zero-egress pipelines, AST automated patching without sensitive log leaks, and adherence to DPDPA, HIPAA, and GDPR standards.",
+        title: "Clean & Maintainable Code",
+        desc: "Writing modular, thoroughly tested code adhering to industry best practices, data security, and performance standards.",
       },
     ],
     spokenLanguages: [

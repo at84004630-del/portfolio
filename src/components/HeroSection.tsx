@@ -51,13 +51,13 @@ export function HeroSection() {
             <span>{PORTFOLIO_DATA.personal.role}</span>
             <span className="text-slate-300 dark:text-slate-700 hidden sm:inline">•</span>
             <span className="text-indigo-600 dark:text-indigo-400 font-medium">
-              Multi-Agent AI & Backend Systems
+              Backend &amp; AI Systems
             </span>
           </div>
 
           {/* Strong One-Line Intro */}
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mb-8">
-            MCA scholar specializing in robust backend architectures, deterministic multi-agent orchestration, and on-device machine learning with full data privacy compliance. Shortlisted at SBI Hackathon @ GFF &apos;26 and IBM Bob 2.0.
+            MCA scholar and software developer passionate about building reliable backend services, RESTful APIs, and intelligent applications with Python and Java.
           </p>
 
           {/* Location & Quick Contact Pill */}
@@ -138,28 +138,6 @@ export function HeroSection() {
               <LinkedinIcon className="w-4 h-4 text-blue-500" />
               <span>linkedin.com/in/{PORTFOLIO_DATA.personal.linkedinHandle}</span>
             </a>
-          </div>
-        </div>
-
-        {/* Highlight Stats Ribbon */}
-        <div className="mt-16 pt-10 border-t border-slate-200/70 dark:border-slate-800/70">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-            {PORTFOLIO_DATA.stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="p-4 sm:p-5 rounded-2xl bg-white/60 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 backdrop-blur-xs text-center transition-all hover:border-indigo-500/30 hover:shadow-xs"
-              >
-                <div className="text-2xl sm:text-3xl font-extrabold text-indigo-600 dark:text-indigo-400 tracking-tight">
-                  {stat.value}
-                </div>
-                <div className="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200 mt-1">
-                  {stat.label}
-                </div>
-                <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-                  {stat.subtext}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>

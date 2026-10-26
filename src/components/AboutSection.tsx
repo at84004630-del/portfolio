@@ -28,10 +28,10 @@ export function AboutSection() {
             <span>ABOUT ME</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Building Resilient Backends &amp; Deterministic AI Workflows
+            Building Scalable Backends &amp; Intelligent Systems
           </h2>
           <p className="mt-4 text-base text-slate-600 dark:text-slate-300">
-            A software engineer grounded in core computer science, systems concurrency, and practical AI implementations with uncompromising data integrity.
+            A software developer grounded in core computer science, backend engineering, and modern AI development.
           </p>
         </div>
 
