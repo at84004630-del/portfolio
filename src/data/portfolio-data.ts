@@ -53,8 +53,8 @@ export const PORTFOLIO_DATA = {
     location: "Lucknow, India",
     github: "https://github.com/at84004630-del",
     githubHandle: "at84004630-del",
-    linkedin: "https://linkedin.com/in/abhinav-tripathi",
-    linkedinHandle: "abhinav-tripathi",
+    linkedin: "https://www.linkedin.com/in/abhinav-tripathi-22236a2a6/",
+    linkedinHandle: "abhinav-tripathi-22236a2a6",
     resumePdf: "/Abhinav_Tripathi_Resume.pdf",
     availability: "Available for Software Engineering Roles & Internships",
     summary:
