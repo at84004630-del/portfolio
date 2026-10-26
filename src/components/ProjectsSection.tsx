@@ -6,10 +6,7 @@ import { PORTFOLIO_DATA, Project } from "@/data/portfolio-data";
 import { ProjectModal } from "./ProjectModal";
 import {
   ExternalLink,
-  Layers,
   ArrowUpRight,
-  ShieldCheck,
-  CheckCircle2,
   Sparkles,
 } from "lucide-react";
 import { GithubIcon } from "./Icons";

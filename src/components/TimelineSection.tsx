@@ -5,13 +5,9 @@ import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 import {
   GraduationCap,
   Award,
-  BookOpen,
   Calendar,
   MapPin,
   CheckCircle2,
-  ExternalLink,
-  ShieldCheck,
-  HeartHandshake,
 } from "lucide-react";
 
 export function TimelineSection() {

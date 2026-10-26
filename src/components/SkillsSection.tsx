@@ -9,7 +9,6 @@ import {
   Database,
   Wrench,
   Binary,
-  CheckCircle2,
   Sparkles,
 } from "lucide-react";
 

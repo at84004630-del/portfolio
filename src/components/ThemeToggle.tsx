@@ -3,20 +3,42 @@
 import React, { useEffect, useState } from "react";
 import { Sun, Moon, Laptop } from "lucide-react";
 
+function applyTheme(target: "dark" | "light" | "system") {
+  if (typeof document === "undefined") return;
+  const root = document.documentElement;
+  if (target === "dark") {
+    root.classList.add("dark");
+    root.style.colorScheme = "dark";
+  } else if (target === "light") {
+    root.classList.remove("dark");
+    root.style.colorScheme = "light";
+  } else {
+    const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (isSystemDark) {
+      root.classList.add("dark");
+      root.style.colorScheme = "dark";
+    } else {
+      root.classList.remove("dark");
+      root.style.colorScheme = "light";
+    }
+  }
+}
+
 export function ThemeToggle() {
   const [theme, setTheme] = useState<"dark" | "light" | "system">("system");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const saved = localStorage.getItem("portfolio-theme") as "dark" | "light" | "system" | null;
-    if (saved) {
-      setTheme(saved);
-      applyTheme(saved);
-    } else {
-      setTheme("system");
-      applyTheme("system");
-    }
+    const initialTheme = saved || "system";
+    applyTheme(initialTheme);
+
+    const frameId = requestAnimationFrame(() => {
+      setMounted(true);
+      if (saved) {
+        setTheme(saved);
+      }
+    });
 
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = () => {
@@ -26,28 +48,11 @@ export function ThemeToggle() {
       }
     };
     mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
+    return () => {
+      cancelAnimationFrame(frameId);
+      mediaQuery.removeEventListener("change", handleChange);
+    };
   }, []);
-
-  const applyTheme = (target: "dark" | "light" | "system") => {
-    const root = document.documentElement;
-    if (target === "dark") {
-      root.classList.add("dark");
-      root.style.colorScheme = "dark";
-    } else if (target === "light") {
-      root.classList.remove("dark");
-      root.style.colorScheme = "light";
-    } else {
-      const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (isSystemDark) {
-        root.classList.add("dark");
-        root.style.colorScheme = "dark";
-      } else {
-        root.classList.remove("dark");
-        root.style.colorScheme = "light";
-      }
-    }
-  };
 
   const handleToggle = (next: "dark" | "light" | "system") => {
     setTheme(next);

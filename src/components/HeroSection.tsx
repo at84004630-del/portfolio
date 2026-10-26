@@ -9,11 +9,6 @@ import {
   MapPin,
   Check,
   Copy,
-  Terminal,
-  ShieldCheck,
-  Cpu,
-  Layers,
-  Sparkles,
 } from "lucide-react";
 import { LinkedinIcon, GithubIcon } from "./Icons";
 

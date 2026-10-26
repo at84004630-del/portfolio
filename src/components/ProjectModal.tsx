@@ -7,10 +7,7 @@ import {
   X,
   ExternalLink,
   CheckCircle2,
-  ShieldCheck,
-  Cpu,
   Layers,
-  ArrowRight,
 } from "lucide-react";
 import { GithubIcon } from "./Icons";
 

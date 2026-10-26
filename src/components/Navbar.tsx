@@ -13,11 +13,7 @@ import {
 } from "lucide-react";
 import { LinkedinIcon, GithubIcon } from "./Icons";
 
-interface NavbarProps {
-  onOpenResumeModal?: () => void;
-}
-
-export function Navbar({ onOpenResumeModal }: NavbarProps) {
+export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 

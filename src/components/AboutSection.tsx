@@ -7,7 +7,6 @@ import {
   Bot,
   Cpu,
   ShieldCheck,
-  GraduationCap,
   Languages,
   CheckCircle2,
 } from "lucide-react";

@@ -9,8 +9,8 @@ import {
   Check,
   Copy,
   ExternalLink,
-  MessageSquare,
   Sparkles,
+  AlertCircle,
 } from "lucide-react";
 import { LinkedinIcon, GithubIcon } from "./Icons";
 
@@ -23,6 +23,8 @@ export function ContactSection() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [needsActivation, setNeedsActivation] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = () => {
@@ -31,24 +33,40 @@ export function ContactSection() {
     setTimeout(() => setCopied(false), 2500);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
 
-    // Simulate submission and construct mailto link
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Failed to send message.");
+      }
+
+      if (result.needsActivation) {
+        setNeedsActivation(true);
+      }
       setSubmitted(true);
-
-      const mailtoUrl = `mailto:${PORTFOLIO_DATA.personal.email}?subject=${encodeURIComponent(
-        formData.subject || `Inquiry from ${formData.name}`
-      )}&body=${encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      )}`;
-
-      // Open mailto as helper
-      window.location.href = mailtoUrl;
-    }, 700);
+    } catch (err: unknown) {
+      console.error("Failed to send message:", err);
+      setErrorMessage(
+        err instanceof Error
+          ? err.message
+          : "Could not send message automatically. Please try again or email directly using the link on the left."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -184,34 +202,89 @@ export function ContactSection() {
                 Send a Direct Message
               </h3>
               <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mb-6">
-                Fill out the form below to reach out directly. A mail draft will also be prepared automatically for your convenience.
+                Fill out the form below to send an email directly to my inbox at {PORTFOLIO_DATA.personal.email}.
               </p>
 
-              {submitted ? (
-                <div className="p-6 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 text-center space-y-3 animate-in fade-in">
-                  <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto">
-                    <Check className="w-6 h-6" />
+              {errorMessage && (
+                <div className="p-4 mb-4 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-800/60 text-xs text-rose-700 dark:text-rose-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 animate-in fade-in">
+                  <div className="flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 shrink-0 text-rose-500" />
+                    <span>{errorMessage}</span>
                   </div>
-                  <h4 className="text-base font-bold text-slate-900 dark:text-white">
-                    Thank you, {formData.name}!
-                  </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 max-w-sm mx-auto">
-                    Your email client should have opened with your message ready to send to{" "}
-                    <strong>{PORTFOLIO_DATA.personal.email}</strong>.
-                  </p>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({ name: "", email: "", subject: "", message: "" });
-                    }}
-                    className="text-xs text-indigo-600 dark:text-indigo-400 underline font-medium"
+                  <a
+                    href={`mailto:${PORTFOLIO_DATA.personal.email}?subject=${encodeURIComponent(
+                      formData.subject || "Portfolio Contact"
+                    )}&body=${encodeURIComponent(
+                      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+                    )}`}
+                    className="underline font-semibold text-rose-800 dark:text-rose-200 shrink-0 hover:text-rose-900"
                   >
-                    Send another message
-                  </button>
+                    Open Email App
+                  </a>
                 </div>
+              )}
+
+              {submitted ? (
+                needsActivation ? (
+                  <div className="p-6 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 text-center space-y-3 animate-in fade-in">
+                    <div className="w-12 h-12 rounded-full bg-amber-100 dark:bg-amber-900/60 text-amber-600 dark:text-amber-400 flex items-center justify-center mx-auto">
+                      <Sparkles className="w-6 h-6" />
+                    </div>
+                    <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                      One-Time Activation Required!
+                    </h4>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 max-w-md mx-auto leading-relaxed">
+                      FormSubmit sent a confirmation email to{" "}
+                      <strong>{PORTFOLIO_DATA.personal.email}</strong>. Please check your inbox
+                      (or spam folder) and click the <strong>&quot;Activate Form&quot;</strong> button once.
+                      After activating, all messages sent from this form will immediately reach your Gmail!
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSubmitted(false);
+                        setNeedsActivation(false);
+                        setFormData({ name: "", email: "", subject: "", message: "" });
+                      }}
+                      className="text-xs text-indigo-600 dark:text-indigo-400 underline font-medium hover:text-indigo-500 transition-colors"
+                    >
+                      Send another message
+                    </button>
+                  </div>
+                ) : (
+                  <div className="p-6 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 text-center space-y-3 animate-in fade-in">
+                    <div className="w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mx-auto">
+                      <Check className="w-6 h-6" />
+                    </div>
+                    <h4 className="text-base font-bold text-slate-900 dark:text-white">
+                      Message Sent Successfully, {formData.name}!
+                    </h4>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 max-w-sm mx-auto">
+                      Your message has been delivered directly to{" "}
+                      <strong>{PORTFOLIO_DATA.personal.email}</strong>. I will get back to you as soon as possible.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSubmitted(false);
+                        setFormData({ name: "", email: "", subject: "", message: "" });
+                      }}
+                      className="text-xs text-indigo-600 dark:text-indigo-400 underline font-medium hover:text-indigo-500 transition-colors"
+                    >
+                      Send another message
+                    </button>
+                  </div>
+                )
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Invisible Honeypot to block spam bots */}
+                  <input
+                    type="text"
+                    name="_honey"
+                    style={{ display: "none" }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label
@@ -289,10 +362,13 @@ export function ContactSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-semibold text-sm text-white bg-indigo-600 hover:bg-indigo-500 disabled:opacity-70 transition-all duration-200 shadow-md hover:shadow-indigo-500/20"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-semibold text-sm text-white bg-indigo-600 hover:bg-indigo-500 disabled:opacity-70 transition-all duration-200 shadow-md hover:shadow-indigo-500/20 cursor-pointer"
                   >
                     {isSubmitting ? (
-                      <span>Preparing email draft...</span>
+                      <>
+                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        <span>Sending message to inbox...</span>
+                      </>
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
