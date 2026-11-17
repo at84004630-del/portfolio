@@ -9,7 +9,7 @@ html = """
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #0f172a;
     font-size: 8.0pt;
-    line-height: 1.26;
+    line-height: 1.28;
     margin: 0;
     padding: 0;
     background: #fff;
@@ -55,13 +55,13 @@ html = """
     letter-spacing: 0.6px;
     border-bottom: 1.3px solid #0f172a;
     padding-bottom: 1px;
-    margin-top: 4.5px;
+    margin-top: 5px;
     margin-bottom: 2.5px;
   }
   
   .summary {
     font-size: 7.9pt;
-    line-height: 1.26;
+    line-height: 1.28;
     text-align: justify;
     color: #1e293b;
   }
@@ -71,11 +71,11 @@ html = """
 
   .skills-box {
     font-size: 7.8pt;
-    line-height: 1.24;
+    line-height: 1.26;
     color: #1e293b;
   }
   .skills-box div {
-    margin-bottom: 1.1px;
+    margin-bottom: 1.2px;
   }
   .skills-box strong {
     color: #090d16;
@@ -101,7 +101,7 @@ html = """
     font-size: 7.5pt;
     color: #475569;
     margin-top: 0.5px;
-    line-height: 1.23;
+    line-height: 1.24;
   }
 
   .project-table {
@@ -139,7 +139,7 @@ html = """
   }
   .project-desc {
     font-size: 7.9pt;
-    line-height: 1.25;
+    line-height: 1.26;
     color: #1e293b;
     margin-top: 1px;
     margin-bottom: 1.5px;
@@ -152,9 +152,9 @@ html = """
     margin: 0;
     padding-left: 12px;
     font-size: 7.7pt;
-    line-height: 1.23;
+    line-height: 1.24;
     color: #334155;
-    margin-bottom: 2.8px;
+    margin-bottom: 3.0px;
   }
   .project-bullets li {
     margin-bottom: 0.3px;
@@ -168,10 +168,10 @@ html = """
     margin: 0;
     padding-left: 12px;
     font-size: 7.8pt;
-    line-height: 1.24;
+    line-height: 1.26;
   }
   .honors-list li {
-    margin-bottom: 1.5px;
+    margin-bottom: 2.0px;
     color: #1e293b;
   }
   .honors-list strong {
@@ -195,12 +195,13 @@ html = """
 
 <div class="section-title">PROFESSIONAL SUMMARY</div>
 <div class="summary">
-  Forward Deployed &amp; Systems Engineering candidate with proven experience architecting event-driven microservices, multi-agent AI pipelines (<strong>Google Gemini</strong>, <strong>LangGraph</strong>), and containerized systems in <strong>Python, Java, and TypeScript</strong>. Skilled in distributed system diagnostics, relational schema optimization, API gateway integration, and enterprise data privacy compliance. Proven track record of building resilient software recognized across national hackathons (<strong>Rank 78/1,400 in Catalyst AI</strong>, SBI Global Fintech Fest). Passionate about client deployment, observability, and automated testing.
+  Forward Deployed &amp; Systems Engineering candidate with hands-on experience building high-performance backend microservices, event-driven streaming pipelines, and containerized systems in <strong>Python, Java, and TypeScript</strong>. Skilled in relational database schema design, RESTful APIs, distributed debugging, and enterprise data privacy compliance. Proven track record of developing resilient technical solutions recognized across national hackathons (<strong>Rank 78/1,400 in Catalyst AI</strong>, SBI Global Fintech Fest). Passionate about customer-facing deployment, observability, and automated testing.
 </div>
 
 <div class="section-title">TECHNICAL SKILLS</div>
 <div class="skills-box">
   <div><strong>Programming Languages:</strong> Python (AsyncIO, OOP, Scripting), Java (Core Java, OOP, Collections), TypeScript, JavaScript, SQL, Rust</div>
+  <div><strong>Core Computer Science:</strong> Data Structures &amp; Algorithms (Arrays, Strings, Two Pointers, Binary Search, Recursion, Sorting), Object-Oriented Design, Time &amp; Space Complexity</div>
   <div><strong>Cloud &amp; DevOps:</strong> Docker, Containerization, Google Cloud Platform (Cloud Run, Cloud Storage, Pub/Sub), CI/CD (GitHub Actions), Linux/Unix CLI, Bash</div>
   <div><strong>Systems &amp; Web Architecture:</strong> FastAPI, RESTful APIs, Next.js, Server-Sent Events (SSE), WebSockets, Microservices, JSON Schema, Redis (Caching)</div>
   <div><strong>Databases &amp; Storage:</strong> PostgreSQL, MySQL, SQLite, Relational Database Design, Query Optimization, Indexing, SQLAlchemy ORM, ACID Transactions</div>
@@ -228,7 +229,7 @@ html = """
   <tr>
     <td class="project-left">
       <span class="project-title">SAATHI &mdash; Automated Banking Grievance &amp; Dispute Resolution Microservice</span>
-      <span class="project-tech">[Google Gemini 1.5, LangGraph, Python, FastAPI, SSE, Docker]</span>
+      <span class="project-tech">[Google Gemini 1.5, Python, FastAPI, AsyncIO, SSE, Docker]</span>
     </td>
     <td class="project-right">
       <a href="https://github.com/at84004630-del">GitHub</a> &bull; <a href="https://github.com/at84004630-del">GFF Shortlist</a>
@@ -239,7 +240,7 @@ html = """
   <strong>Project Overview:</strong> Autonomous banking triage platform that automates failed UPI payment dispute resolution without manual intervention.
 </div>
 <ul class="project-bullets">
-  <li>Architected a multi-agent DAG in Python powered by <strong>Google Gemini 1.5 Flash</strong> and <strong>LangGraph</strong> with FastAPI SSE streaming, reducing simulated dispute turnaround to <strong>4.2 minutes</strong>.</li>
+  <li>Engineered a multi-agent orchestrator in Python powered by <strong>Google Gemini 1.5 Flash</strong> with FastAPI SSE streaming, reducing simulated dispute turnaround to <strong>4.2 minutes</strong>.</li>
   <li>Designed deterministic state-machine validation and relational schemas with strict data-masking mechanisms compliant with DPDPA 2023 principles.</li>
   <li>Packaged services with Docker and configured integration tests verifying transactional reconciliation under simulated network failures.</li>
 </ul>
@@ -327,7 +328,6 @@ html = """
   <li><strong>National Shortlist &mdash; SBI Hackathon @ Global Fintech Fest 2026:</strong> Shortlisted into Idea Submission phase by NPCI, FCC, and HackCulture from thousands of nationwide participants for Gemini-powered SAATHI banking platform.</li>
   <li><strong>Certificate of Completion &amp; Excellence &mdash; IBM Bob 2.0 Hackathon:</strong> Awarded for outstanding performance, attendance, and submitting MedTrace incident triaging platform (Cert ID: CMULAQ6XC00H7S601WX38KT9U).</li>
   <li><strong>Runner Up &mdash; Amiphoria Technical Hackathon 2026:</strong> Runner Up in inter-university technical coding competition in 2026 at Amity University.</li>
-  <li><strong>Algorithmic Problem Solving &amp; Competitive Programming:</strong> Solved <strong>300+ problems</strong> across LeetCode &amp; GeeksforGeeks focusing on Data Structures, Graphs, Dynamic Programming, and optimal time &amp; space complexity.</li>
 </ul>
 
 </body>
@@ -406,4 +406,4 @@ if os.path.exists("C:/Users/ABHINAV TRIPATHI/Downloads/New folder (3)"):
     print(f"Copied PDF to {new_folder_3_pdf}")
 
 doc.close()
-print("Position #1 Resume compiled successfully!")
+print("Honest, Defendable Resume rendered successfully!")
