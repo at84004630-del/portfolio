@@ -173,7 +173,7 @@ html = """
 
 <div class="header">
   <div class="name">ABHINAV TRIPATHI</div>
-  <div class="role">SOFTWARE ENGINEER &bull; FORWARD DEPLOYED &amp; CLOUD SYSTEMS</div>
+  <div class="role">SOFTWARE ENGINEER INTERN</div>
   <div class="contact">
     Lucknow, India <span class="sep">&bull;</span>
     <a href="mailto:at84004630@gmail.com">at84004630@gmail.com</a> <span class="sep">&bull;</span>
@@ -397,3 +397,4 @@ if os.path.exists("C:/Users/ABHINAV TRIPATHI/Downloads/New folder (3)"):
 
 doc.close()
 print("All PDFs and previews refreshed successfully!")
+
