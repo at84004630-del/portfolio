@@ -195,17 +195,17 @@ html = """
 
 <div class="section-title">PROFESSIONAL SUMMARY</div>
 <div class="summary">
-  Forward Deployed &amp; Systems Engineering candidate with hands-on experience building high-performance backend microservices, event-driven streaming pipelines, and containerized systems in <strong>Python, Java, and TypeScript</strong>. Skilled in relational database schema design, RESTful APIs, distributed debugging, and enterprise data privacy compliance. Proven track record of developing resilient technical solutions recognized across national hackathons (<strong>Rank 78/1,400 in Catalyst AI</strong>, SBI Global Fintech Fest). Passionate about customer-facing deployment, observability, and automated testing.
+  Software Engineer &amp; Systems Engineering candidate with hands-on experience building high-performance backend microservices, event-driven streaming pipelines, and containerized systems in <strong>Python, Java, and TypeScript</strong>. Skilled in relational database schema design, RESTful APIs, distributed debugging, unit testing, and enterprise data privacy compliance. Proven track record of developing resilient technical solutions recognized across national hackathons (<strong>Rank 78/1,400 in Catalyst AI</strong>, SBI Global Fintech Fest). Strong focus on observability, system design, and automated testing.
 </div>
 
 <div class="section-title">TECHNICAL SKILLS</div>
 <div class="skills-box">
   <div><strong>Programming Languages:</strong> Python (AsyncIO, OOP, Scripting), Java (Core Java, OOP, Collections), TypeScript, JavaScript, SQL, Rust</div>
-  <div><strong>Core Computer Science:</strong> Data Structures &amp; Algorithms (Arrays, Strings, Two Pointers, Binary Search, Recursion, Sorting), Object-Oriented Design, Time &amp; Space Complexity</div>
+  <div><strong>Core Computer Science:</strong> Data Structures &amp; Algorithms (Arrays, Strings, Two Pointers, Binary Search, Recursion, Sorting), Object-Oriented Programming (OOP), Time and Space Complexity Analysis, System Design Foundations</div>
   <div><strong>Cloud &amp; DevOps:</strong> Docker, Containerization, Google Cloud Platform (Cloud Run, Cloud Storage, Pub/Sub), CI/CD (GitHub Actions), Linux/Unix CLI, Bash</div>
   <div><strong>Systems &amp; Web Architecture:</strong> FastAPI, RESTful APIs, Next.js, Server-Sent Events (SSE), WebSockets, Microservices, JSON Schema, Redis (Caching)</div>
   <div><strong>Databases &amp; Storage:</strong> PostgreSQL, MySQL, SQLite, Relational Database Design, Query Optimization, Indexing, SQLAlchemy ORM, ACID Transactions</div>
-  <div><strong>Software Engineering &amp; Reliability:</strong> Automated Testing (PyTest), Code Reviews &amp; Style Guidelines, Incident Diagnostics &amp; Bug Triaging, Technical Documentation, Git, GitHub</div>
+  <div><strong>Software Engineering &amp; Reliability:</strong> Unit Testing &amp; Integration Testing (PyTest), Automated Incident Diagnostics &amp; Bug Triaging, Code Reviews, Technical Documentation, Git, GitHub</div>
 </div>
 
 <div class="section-title">EDUCATION</div>
@@ -262,7 +262,7 @@ html = """
 <ul class="project-bullets">
   <li>Intercepts runtime error logs and stack traces across distributed services to synthesize minimal reproducible test cases in <strong>under 90 seconds</strong>.</li>
   <li>Built automated test verification achieving <strong>100% test pass rate across 16 test suites</strong>, integrating log sanitation to prevent sensitive PHI data exposure.</li>
-  <li>Configured containerized multi-stage Docker deployment and GitHub Actions CI workflow for automated linting and integration testing.</li>
+  <li>Configured containerized multi-stage Docker deployment and GitHub Actions CI workflow for automated unit testing, linting, and integration testing.</li>
 </ul>
 
 <table class="project-table">
@@ -406,4 +406,4 @@ if os.path.exists("C:/Users/ABHINAV TRIPATHI/Downloads/New folder (3)"):
     print(f"Copied PDF to {new_folder_3_pdf}")
 
 doc.close()
-print("Honest, Defendable Resume rendered successfully!")
+print("100% Target Resume compiled!")
