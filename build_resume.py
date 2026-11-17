@@ -328,7 +328,7 @@ html = """
   <li><strong>National Shortlist &mdash; SBI Hackathon @ Global Fintech Fest 2026:</strong> Shortlisted into Idea Submission phase by NPCI, FCC, and HackCulture from thousands of nationwide participants for Gemini-powered SAATHI banking platform.</li>
   <li><strong>Certificate of Completion &amp; Excellence &mdash; IBM Bob 2.0 Hackathon:</strong> Awarded for outstanding performance, attendance, and submitting MedTrace incident triaging platform (Cert ID: CMULAQ6XC00H7S601WX38KT9U).</li>
   <li><strong>Runner Up &mdash; Amiphoria Technical Hackathon 2026:</strong> Runner Up in inter-university technical coding competition in 2026 at Amity University.</li>
-  <li><strong>Continuous Learning &amp; Algorithmic Practice:</strong> Actively learning and practicing foundational Data Structures &amp; Algorithms (Arrays, Strings, Two Pointers, Binary Search, Recursion) in Java and Python with focus on optimal time &amp; space complexity.</li>
+  <li><strong>Structured Algorithmic Training &mdash; Apna College:</strong> Actively completing structured curriculum in foundational Data Structures &amp; Algorithms (Arrays, Strings, Two Pointers, Binary Search, Recursion) in Java with focus on optimal time &amp; space complexity.</li>
 </ul>
 
 </body>
@@ -407,4 +407,4 @@ if os.path.exists("C:/Users/ABHINAV TRIPATHI/Downloads/New folder (3)"):
     print(f"Copied PDF to {new_folder_3_pdf}")
 
 doc.close()
-print("Resume with Learning DSA bullet compiled successfully!")
+print("Apna College bullet integrated successfully!")
