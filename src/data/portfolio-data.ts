@@ -438,6 +438,15 @@ export const PORTFOLIO_DATA = {
 
   honorsAndCertifications: [
     {
+      title: "Rank 78 / 1,400 Teams (Top 5.5%) — Catalyst AI Hackathon",
+      event: "Catalyst AI Hackathon",
+      issuer: "Catalyst AI",
+      dateOrBatch: "2026",
+      badge: "Rank 78 (Top 5.5%)",
+      description:
+        "Ranked 78th nationwide out of 1,400 competing teams, recognized for high-throughput AI agent architecture and low-latency response engineering.",
+    },
+    {
       title: "National Shortlist — SBI Hackathon @ Global Fintech Fest 2026",
       event: "Global Fintech Fest 2026 (Organized by NPCI, FCC & HackCulture)",
       issuer: "NPCI / FCC / HackCulture",
@@ -503,4 +512,5 @@ export const PORTFOLIO_DATA = {
     },
   ] as HonorItem[],
 };
+
 

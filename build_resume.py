@@ -1,4 +1,4 @@
-﻿import pymupdf
+﻿import pymupdf, shutil, os
 
 html = """
 <!DOCTYPE html>
@@ -312,6 +312,7 @@ html = """
 
 <div class="section-title">HONORS, CERTIFICATIONS &amp; LEADERSHIP</div>
 <ul class="honors-list">
+  <li><strong>Rank 78 / 1,400 Teams (Top 5.5%) &mdash; Catalyst AI Hackathon:</strong> Ranked 78th nationwide out of 1,400 competing teams, recognized for high-throughput AI agent architecture and low-latency response engineering.</li>
   <li><strong>National Shortlist &mdash; SBI Hackathon @ Global Fintech Fest 2026:</strong> Shortlisted into Idea Submission phase by NPCI, FCC, and HackCulture from thousands of nationwide participants for SAATHI banking platform.</li>
   <li><strong>Certificate of Completion &amp; Excellence &mdash; IBM Bob 2.0 Hackathon:</strong> Awarded for outstanding performance, attendance, and submitting MedTrace incident triaging platform (Cert ID: CMULAQ6XC00H7S601WX38KT9U).</li>
   <li><strong>Runner Up &mdash; Amiphoria Technical Hackathon 2026:</strong> Runner Up in inter-university technical coding competition in 2026 at Amity University.</li>
@@ -324,7 +325,6 @@ html = """
 
 pdf_path = "C:/Users/ABHINAV TRIPATHI/portfolio/public/Abhinav_Tripathi_Resume.pdf"
 
-# 1. Render layout to PDF
 story = pymupdf.Story(html=html)
 writer = pymupdf.DocumentWriter(pdf_path)
 rect = pymupdf.Rect(28, 20, 584, 772)
@@ -341,7 +341,6 @@ writer.close()
 print(f"Rendered {pages} page(s).")
 assert pages == 1, f"ERROR: Expected 1 page, got {pages} pages!"
 
-# 2. Add clickable hyperlinks
 doc = pymupdf.open(pdf_path)
 page = doc[0]
 
@@ -376,5 +375,25 @@ for title, links in projects_info:
             add_link(link_text, link_url, y_min, y_max)
 
 doc.save(pdf_path, incremental=True, encryption=pymupdf.PDF_ENCRYPT_KEEP)
+
+# Render high-res preview PNG
+pix = page.get_pixmap(dpi=150)
+preview_path = "C:/Users/ABHINAV TRIPATHI/Downloads/New folder/resume_preview.png"
+pix.save(preview_path)
+print(f"Saved preview PNG to {preview_path}")
+
+workspace_pdf = "C:/Users/ABHINAV TRIPATHI/Downloads/New folder/Abhinav_Tripathi_Resume.pdf"
+desktop_pdf = "C:/Users/ABHINAV TRIPATHI/OneDrive/Desktop/Abhinav_Tripathi_Software_Engineer_Resume.pdf"
+new_folder_3_pdf = "C:/Users/ABHINAV TRIPATHI/Downloads/New folder (3)/Abhinav_Tripathi_SWE_Resume.pdf"
+
+shutil.copyfile(pdf_path, workspace_pdf)
+print(f"Copied PDF to {workspace_pdf}")
+if os.path.exists("C:/Users/ABHINAV TRIPATHI/OneDrive/Desktop"):
+    shutil.copyfile(pdf_path, desktop_pdf)
+    print(f"Copied PDF to {desktop_pdf}")
+if os.path.exists("C:/Users/ABHINAV TRIPATHI/Downloads/New folder (3)"):
+    shutil.copyfile(pdf_path, new_folder_3_pdf)
+    print(f"Copied PDF to {new_folder_3_pdf}")
+
 doc.close()
-print("SUCCESS: 1-Page PDF generated with interactive links!")
+print("All PDFs and previews refreshed successfully!")
