@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Download Abhinav Tripathi Resume</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #0f172a;
+      color: #fff;
+    }
+    .card {
+      background: #1e293b;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      text-align: center;
+      max-width: 480px;
+      border: 1px solid #334155;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: #f8fafc;
+    }
+    p {
+      color: #94a3b8;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #4f46e5;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: background 0.2s, transform 0.1s;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #4338ca;
+      transform: translateY(-1px);
+    }
+    .note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Abhinav Tripathi — Resume</h1>
+    <p>Software Engineer (3+ Years Experience)</p>
+    
+    <a id="downloadBtn" class="btn" href="Abhinav_Tripathi_Resume.pdf" download="Abhinav_Tripathi_Resume.pdf">
+      ⬇️ Download Resume PDF
+    </a>
+
+    <div class="note">
+      If download didn't start automatically, click the button above.
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        var btn = document.getElementById('downloadBtn');
+        if (btn) btn.click();
+      }, 300);
+    });
+  </script>
+</body>
+</html>
+

@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abhinav Tripathi | Python & Java Developer | Multi-Agent AI Systems",
+  title: "Abhinav Tripathi | Python & Java Developer | Backend & AI Systems",
   description:
-    "Portfolio of Abhinav Tripathi, Python & Java Developer and MCA scholar specializing in robust backend architectures, multi-agent AI systems (LangGraph), and on-device edge machine learning.",
+    "Portfolio of Abhinav Tripathi, Python & Java Developer and MCA scholar specializing in robust backend architectures, RESTful APIs, multi-agent AI systems, and decentralized applications.",
   keywords: [
     "Abhinav Tripathi",
     "Python Developer",
@@ -23,9 +23,10 @@ export const metadata: Metadata = {
     "Multi-Agent AI",
     "LangGraph",
     "FastAPI",
-    "Backend Architect",
-    "Qualcomm AI Hub",
-    "Edge AI",
+    "Backend Developer",
+    "Solana",
+    "Smart Contracts",
+    "Web3",
     "DPDPA 2023",
     "HIPAA Compliance",
   ],

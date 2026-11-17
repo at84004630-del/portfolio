@@ -1,10 +1,11 @@
-export interface Project {
+﻿export interface Project {
   id: string;
   title: string;
   tagline: string;
-  category: "Multi-Agent AI" | "Edge AI" | "Backend Systems" | "Web3 / Security";
+  category: "Multi-Agent AI" | "Backend Systems" | "Web3 / Security";
   badge?: string;
   image: string;
+  overview: string;
   summary: {
     problem: string;
     solution: string;
@@ -58,12 +59,12 @@ export const PORTFOLIO_DATA = {
     resumePdf: "/Abhinav_Tripathi_Resume.pdf",
     availability: "Available for Software Engineering Roles & Internships",
     summary:
-      "Python & Java Developer and MCA scholar at Amity University Online (BCA Graduate, Amity University Lucknow) specializing in application development, robust backend architectures, and intelligent software systems.",
+      "Software Engineer and MCA scholar at Amity University Online (BCA Graduate, Amity University Lucknow) specializing in application development, robust backend architectures, and intelligent software systems.",
   },
 
   about: {
     bio: [
-      "I am a Python & Java Developer and MCA scholar with a strong engineering mindset focused on building high-performance backend systems, asynchronous APIs, and intelligent applications.",
+      "I am a Software Engineer and MCA scholar with a strong engineering mindset focused on building high-performance backend systems, asynchronous APIs, and intelligent applications.",
       "My work includes engineering innovative platforms recognized at hackathons such as SBI Hackathon @ Global Fintech Fest and IBM Bob 2.0 Hackathon, alongside developing on-device edge AI and machine learning solutions.",
       "I value writing clean, readable, and maintainable code with robust testing, structured error handling, and solid computer science principles.",
     ],
@@ -77,8 +78,8 @@ export const PORTFOLIO_DATA = {
         desc: "Designing collaborative multi-agent workflows using LangGraph and structured validations.",
       },
       {
-        title: "Edge AI & Machine Learning",
-        desc: "Quantizing and executing machine learning models on edge hardware using Qualcomm AI Hub and ONNX Runtime.",
+        title: "Web3 Protocols & Smart Contracts",
+        desc: "Engineering parametric smart contracts on Solana with Anchor, automated non-custodial escrow, and real-time oracle feeds.",
       },
       {
         title: "Clean & Maintainable Code",
@@ -119,9 +120,9 @@ export const PORTFOLIO_DATA = {
         skills: [
           { name: "Multi-Agent Systems", details: "Agentic Workflows, State Management, Human-in-the-Loop", level: "Advanced" },
           { name: "LangGraph", details: "State Graphs, Cyclic Orchestration, Node Vetoing", level: "Advanced" },
-          { name: "Qualcomm AI Hub", details: "Model Compilation, NPU Quantization, Target Profiling", level: "Proficient" },
-          { name: "ONNX & QNN Runtime", details: "Cross-platform Hardware Execution, 45 TOPS Hexagon", level: "Proficient" },
-          { name: "Model Quantization", details: "Phi-3.5 Mini, Whisper, DenseNet, BioBERT Edge Deploys", level: "Proficient" },
+          { name: "Solana & Smart Contracts", details: "Anchor Framework, Rust, Non-Custodial PDA Escrow", level: "Proficient" },
+          { name: "Oracle Integrations", details: "Switchboard Oracle, Real-World Data Feeds, Web3.js", level: "Proficient" },
+          { name: "Model Inference (ONNX)", details: "Edge Inference, Optimization, REST Integration", level: "Proficient" },
         ],
       },
       {
@@ -164,6 +165,8 @@ export const PORTFOLIO_DATA = {
       category: "Multi-Agent AI",
       badge: "GFF 2026 National Shortlist",
       image: "/projects/saathi.jpg",
+      overview:
+        "Automated banking platform that quickly resolves failed UPI payment disputes without manual intervention.",
       summary: {
         problem:
           "UPI grievance resolution traditionally suffered from 30-day turnaround delays due to manual log inspection and non-standardized dispute processing across fragmented banking interfaces.",
@@ -187,7 +190,7 @@ export const PORTFOLIO_DATA = {
       compliance: ["DPDPA 2023", "RBI FREE-AI Guidelines", "NPCI UPI Dispute Framework"],
       githubUrl: "https://github.com/at84004630-del",
       liveDemoUrl: "https://github.com/at84004630-del",
-      demoAvailable: true,
+      demoAvailable: false,
       architectureDetails: {
         architecture:
           "Hierarchical LangGraph state machine where SENTINEL detects transaction anomalies, KARMA maps the lifecycle state across core banking logs, and SHIELD verifies regulatory safety. Before any action is executed, the GUARDIAN veto engine deterministically enforces RBI guidelines.",
@@ -208,6 +211,8 @@ export const PORTFOLIO_DATA = {
       category: "Multi-Agent AI",
       badge: "IBM Bob 2.0 Awardee",
       image: "/projects/medtrace.jpg",
+      overview:
+        "Healthcare diagnostics platform that quickly detects software bugs and generates safe automated fixes.",
       summary: {
         problem:
           "Healthcare software outages risk patient outcomes, but manual remediation often takes hours and introduces severe regulatory liabilities if sensitive patient records (PHI) leak into error logs or LLMs.",
@@ -229,8 +234,8 @@ export const PORTFOLIO_DATA = {
         { label: "PHI Logging", value: "0 KB (Guaranteed)" },
       ],
       compliance: ["HIPAA §164.312", "EU AI Act Article 50", "PHI Redaction Standards"],
-      githubUrl: "https://github.com/at84004630-del",
-      liveDemoUrl: "https://github.com/at84004630-del",
+      githubUrl: "https://github.com/at84004630-del/MedTrace",
+      liveDemoUrl: "https://medtrace-ai.vercel.app/",
       demoAvailable: true,
       architectureDetails: {
         architecture:
@@ -246,47 +251,48 @@ export const PORTFOLIO_DATA = {
     },
 
     {
-      id: "medisense",
-      title: "MediSense Edge — On-Device Clinical Decision Support Suite",
-      tagline: "Submitted to Qualcomm Snapdragon AI Lab Hackathon",
-      category: "Edge AI",
-      badge: "Qualcomm AI Lab Submission",
-      image: "/projects/medisense.jpg",
+      id: "microshield",
+      title: "MicroShield — Decentralized Parametric Flight Insurance Protocol",
+      tagline: "Automated Flight Delay Insurance Smart Contracts on Solana",
+      category: "Web3 / Security",
+      badge: "Solana Hackathon Submission",
+      image: "/projects/microshield.jpg",
+      overview:
+        "Decentralized Solana app that pays instant flight delay insurance claims directly to wallets.",
       summary: {
         problem:
-          "Clinical AI tools relying on cloud APIs suffer from network latency, high continuous subscription costs, and severe risk of data egress violating patient sovereignty and hospital air-gap policies.",
+          "Flight delay compensation is notoriously slow, complex, and requires tedious paperwork and manual claims.",
         solution:
-          "Engineered a 100% on-device clinical intelligence suite for Snapdragon X Elite PCs, running completely air-gapped with 0 KB cloud data egress for total HIPAA/GDPR sovereignty.",
+          "Engineered Anchor smart contracts on Solana locking USDC premiums in escrow and auto-triggering payouts.",
         result:
-          "Quantized and deployed 6 models (Phi-3.5 Mini @ 42ms, Whisper Base @ 18ms, DenseNet-121, BioBERT) via Qualcomm AI Hub onto the 45 TOPS Hexagon NPU, operating at an ultra-low 1.4W power envelope.",
+          "Integrated Switchboard Oracle for real-time flight data, executing trustless claim payouts in seconds.",
       },
       highlights: [
-        "Engineered a 100% on-device clinical intelligence suite for Snapdragon X Elite PCs submitted to the Qualcomm Snapdragon AI Lab Hackathon, running completely air-gapped with 0 KB cloud data egress for total HIPAA/GDPR sovereignty.",
-        "Quantized and deployed 6 models (Phi-3.5 Mini 42ms, Whisper Base 18ms, DenseNet-121, BioBERT) via Qualcomm AI Hub onto the 45 TOPS Hexagon NPU, operating at an ultra-low 1.4W power envelope.",
-        "Integrated asynchronous FastAPI local endpoints with ONNX and Qualcomm Neural Network (QNN) Runtime.",
+        "Architected a decentralized parametric flight delay micro-insurance protocol submitted to the Colosseum Solana Hackathon.",
+        "Engineered Anchor smart contracts on Solana to manage non-custodial Program Derived Address (PDA) escrow vaults for premium staking and automatic payouts.",
+        "Integrated Switchboard Oracle with real-time flight status APIs (AviationStack) to trigger instant claim disbursements in USDC without human claims processing.",
       ],
-      techStack: ["Python", "Qualcomm AI Hub", "ONNX Runtime", "QNN Runtime", "FastAPI", "Phi-3.5 Mini", "Whisper", "BioBERT"],
+      techStack: ["Solana", "Rust", "Anchor", "Switchboard Oracle", "USDC", "Next.js", "TypeScript", "Tailwind CSS"],
       metrics: [
-        { label: "NPU Acceleration", value: "45 TOPS" },
-        { label: "Phi-3.5 Latency", value: "42 ms" },
-        { label: "Whisper Latency", value: "18 ms" },
-        { label: "Cloud Data Egress", value: "0 KB (Air-Gapped)" },
-        { label: "Power Envelope", value: "1.4W Ultra-Low" },
+        { label: "Blockchain", value: "Solana Devnet" },
+        { label: "Payout Trigger", value: "Instant via Oracle" },
+        { label: "Smart Contracts", value: "Anchor / Rust" },
+        { label: "Settlement Token", value: "USDC" },
       ],
-      compliance: ["Air-Gapped HIPAA Sovereignty", "GDPR Zero-Egress", "On-Device Processing"],
-      githubUrl: "https://github.com/at84004630-del",
-      liveDemoUrl: "https://github.com/at84004630-del",
-      demoAvailable: false,
+      compliance: ["Non-Custodial Escrow", "Program Derived Addresses (PDA)", "Cryptographic Verification"],
+      githubUrl: "https://github.com/at84004630-del/MicroShield",
+      liveDemoUrl: "https://micro-sheild-test.vercel.app/",
+      demoAvailable: true,
       architectureDetails: {
         architecture:
-          "Direct hardware execution layer using Qualcomm AI Hub compiled targets. Models are mapped directly to the Snapdragon X Elite Hexagon NPU via QNN Execution Provider, interfaced through a lightweight local Python backend.",
+          "Solana Anchor framework architecture with non-custodial PDA escrow vaults. Flight status feeds are monitored via Switchboard Oracles linked to AviationStack APIs, executing instant contract payouts directly into travelers' Phantom wallets upon threshold breach.",
         keyInnovations: [
-          "Sub-50ms conversational medical triage locally without internet connection",
-          "18ms speech-to-text consultation transcription using quantized Whisper Base",
-          "Ultra-low 1.4W power envelope enabling all-day battery life on medical workstation laptops",
+          "Parametric micro-insurance model removing traditional paperwork and claims adjusters",
+          "Switchboard Oracle feed verification ensuring tamper-proof flight delay data feeds",
+          "Instant on-chain USDC settlement with sub-second finality on Solana",
         ],
         securityPrivacy:
-          "Physical air-gap guarantees 100% zero data packets leave the local workstation; no external server dependencies.",
+          "Non-custodial smart contracts ensure users retain custody of funds; escrow balances are locked in deterministic program-derived addresses.",
       },
     },
 
@@ -297,6 +303,8 @@ export const PORTFOLIO_DATA = {
       category: "Backend Systems",
       badge: "Enterprise Platform",
       image: "/projects/staffpulse.jpg",
+      overview:
+        "Smart attendance and payroll backend managing complex work shifts and automated salary slips.",
       summary: {
         problem:
           "Organizations with complex split-shift rosters faced time fraud, burnout tracking gaps, and employee privacy resistance regarding centralized biometric cloud storage.",
@@ -310,7 +318,7 @@ export const PORTFOLIO_DATA = {
         "Engineered client-side cryptographic storage (RC4 cipher, SHA-256 session hashing) with zero-server data sovereignty, automated payroll tier computation, and instant payslip PDF generation.",
         "Implemented robust SQLite transactional backend with web architecture standards.",
       ],
-      techStack: ["Python", "Web Architecture", "SQLite", "Biometric Face-Capture", "RC4 Cipher", "SHA-256", "Automated Payroll"],
+      techStack: ["Python", "Java", "SQL", "Relational Schema", "SHA-256", "Automated Payroll", "REST APIs"],
       metrics: [
         { label: "Shift Coverage", value: "24/7 Split Roster" },
         { label: "Data Sovereignty", value: "Zero-Server Retention" },
@@ -318,8 +326,8 @@ export const PORTFOLIO_DATA = {
         { label: "Payroll Computation", value: "Automated Instant Tiers" },
       ],
       compliance: ["Zero-Server Biometric Storage", "Cryptographic Session Hashing"],
-      githubUrl: "https://github.com/at84004630-del",
-      liveDemoUrl: "https://github.com/at84004630-del",
+      githubUrl: "https://github.com/at84004630-del/staffpulse",
+      liveDemoUrl: "https://staffpulse-hr-2024.web.app/",
       demoAvailable: true,
       architectureDetails: {
         architecture:
@@ -336,43 +344,47 @@ export const PORTFOLIO_DATA = {
 
     {
       id: "aora",
-      title: "Aora AI — Web3 Behavioral AI Interceptor",
-      tagline: "Automated Behavioral Threat Intelligence for On-Chain Wallet Interactions",
-      category: "Web3 / Security",
-      badge: "Security Prototype",
+      title: "AORA AI — Your Emotional Companion",
+      tagline: "AI-Powered Conversational Companion for Emotional Support & Wellness",
+      category: "Multi-Agent AI",
+      badge: "Conversational AI",
       image: "/projects/aora.jpg",
+      overview:
+        "Friendly conversational AI assistant that offers empathetic emotional support and daily mental wellness.",
       summary: {
         problem:
-          "Phishing drainers and obscure smart contract approvals deceive users into signing malicious transactions that instantly drain wallet balances.",
+          "People experiencing daily stress often lack accessible, judgment-free conversational spaces for immediate emotional expression.",
         solution:
-          "Developed an automated behavioral AI interception prototype to analyze transaction intent and identify anomalous on-chain wallet interactions in real time.",
+          "Built an empathetic AI companion delivering responsive, mindful dialogue with secure authentication and privacy safeguards.",
         result:
-          "Successfully intercepted deceptive transaction payloads and anomalous authorization requests prior to on-chain broadcast using Python backend agent logic.",
+          "Enabled continuous, supportive real-time conversations with sub-second response times and zero conversational data leakage.",
       },
       highlights: [
-        "Developed an automated behavioral AI interception prototype to analyze transaction intent and identify anomalous on-chain wallet interactions in real time.",
-        "Engineered intent parsing heuristics and REST API endpoints for rapid threat classification.",
-        "Designed simulation hooks to evaluate contract call behavior before user signature execution.",
+        "Designed and deployed an intelligent conversational companion focused on empathetic dialogue and mental wellness.",
+        "Engineered a responsive Next.js frontend with secure user authentication and streaming conversation states.",
+        "Integrated contextual conversational AI models to deliver supportive, context-aware responses with sub-second latency.",
       ],
-      techStack: ["Python Backend", "AI Agent Logic", "REST APIs", "Transaction Simulation", "Security Heuristics"],
+      techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "REST APIs", "AI Conversational Models", "Authentication"],
       metrics: [
-        { label: "Interception Logic", value: "Real-Time Intent Analysis" },
-        { label: "Threat Detection", value: "Drainers & Malicious Signatures" },
-        { label: "Architecture", value: "Python Agent Heuristics" },
+        { label: "Response Latency", value: "Sub-Second" },
+        { label: "User Privacy", value: "Encrypted & Safe" },
+        { label: "Interface", value: "Conversational UI" },
+        { label: "Availability", value: "24/7 Live" },
       ],
-      compliance: ["Threat Simulation Guidelines", "Safe Signature Protocol"],
+      compliance: ["End-to-End Session Privacy", "Zero Data Retention", "Safe Dialogue Safeguards"],
       githubUrl: "https://github.com/at84004630-del",
-      liveDemoUrl: "https://github.com/at84004630-del",
+      liveDemoUrl: "https://aora-ai-two.vercel.app/",
       demoAvailable: true,
       architectureDetails: {
         architecture:
-          "Heuristic and agent-driven interception proxy that inspects contract bytecode, destination reputation, and transaction payloads, flagging anomalies through RESTful status signals.",
+          "Next.js architecture integrated with conversational AI inference endpoints, secure session authentication, and lightweight state management for real-time streaming dialogue.",
         keyInnovations: [
-          "Behavioral intent classification distinguishing legitimate DeFi swaps from malicious authorization drainers",
-          "Low-latency REST verification pipeline suitable for wallet extension integration",
+          "Empathetic conversational tone modeling designed for emotional reassurance",
+          "Low-latency streaming response generation for natural dialogue pacing",
+          "Privacy-centric session storage protecting sensitive personal conversations",
         ],
         securityPrivacy:
-          "Operates purely on transaction payload simulation with zero private key handling.",
+          "User interactions and conversational logs are kept strictly private with secure session authentication.",
       },
     },
   ] as Project[],
@@ -435,6 +447,15 @@ export const PORTFOLIO_DATA = {
         "Shortlisted into the Idea Submission phase from thousands of nationwide participants for SAATHI AI banking platform.",
     },
     {
+      title: "Runner Up — Amiphoria Event 2026",
+      event: "Amiphoria 2026",
+      issuer: "Amity University",
+      dateOrBatch: "2026",
+      badge: "Runner Up",
+      description:
+        "Runner Up in Amiphoria event in 2026 at Amity University.",
+    },
+    {
       title: "Certificate of Completion — IBM Bob 2.0 Hackathon",
       event: "IBM Bob 2.0 Hackathon",
       issuer: "Lablab.ai / NativelyAI",
@@ -482,3 +503,4 @@ export const PORTFOLIO_DATA = {
     },
   ] as HonorItem[],
 };
+

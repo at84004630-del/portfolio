@@ -18,7 +18,6 @@ export function ProjectsSection() {
   const categories = [
     "All",
     "Multi-Agent AI",
-    "Edge AI",
     "Backend Systems",
     "Web3 / Security",
   ];
@@ -40,7 +39,7 @@ export function ProjectsSection() {
             High-Impact Engineering Deliverables
           </h2>
           <p className="mt-4 text-base text-slate-600 dark:text-slate-300">
-            Real platforms engineered with strict compliance, deterministic multi-agent state machines, and hardware NPU acceleration.
+            Real platforms engineered with strict compliance, deterministic multi-agent state machines, and decentralized protocols.
           </p>
         </div>
 
@@ -125,21 +124,14 @@ export function ProjectsSection() {
                     </p>
                   </div>
 
-                  {/* Problem - Solution - Result 2-3 Line Summary */}
-                  <div className="space-y-2 text-xs text-slate-600 dark:text-slate-300">
-                    <div className="p-2.5 rounded-lg bg-slate-50 dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800">
-                      <span className="font-semibold text-slate-800 dark:text-slate-200 block mb-0.5">
-                        Problem &amp; Context:
-                      </span>
-                      <p className="line-clamp-2">{project.summary.problem}</p>
-                    </div>
-
-                    <div className="p-2.5 rounded-lg bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-100/60 dark:border-indigo-900/30">
-                      <span className="font-semibold text-indigo-700 dark:text-indigo-300 block mb-0.5">
-                        Engineered Result:
-                      </span>
-                      <p className="line-clamp-2">{project.summary.result}</p>
-                    </div>
+                  {/* Simplified Project Overview (10-15 Words) */}
+                  <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-800">
+                    <span className="text-[11px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wider block mb-1">
+                      Project Overview
+                    </span>
+                    <p className="text-xs text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
+                      {project.overview}
+                    </p>
                   </div>
 
                   {/* Key Stats Chips */}
@@ -189,15 +181,17 @@ export function ProjectsSection() {
                     <span>GitHub</span>
                   </a>
 
-                  <a
-                    href={project.liveDemoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg shadow-xs transition-colors"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                    <span>Demo</span>
-                  </a>
+                  {project.demoAvailable && (
+                    <a
+                      href={project.liveDemoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg shadow-xs transition-colors"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5" />
+                      <span>Demo</span>
+                    </a>
+                  )}
                 </div>
 
                 <button

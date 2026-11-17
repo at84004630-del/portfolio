@@ -75,6 +75,16 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </p>
           </div>
 
+          {/* Simplified Project Overview */}
+          <div className="p-4 rounded-xl bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-200/70 dark:border-indigo-800/60">
+            <span className="text-xs font-bold text-indigo-700 dark:text-indigo-300 uppercase tracking-wider block mb-1">
+              Project Overview
+            </span>
+            <p className="text-sm text-slate-800 dark:text-slate-200 font-medium leading-relaxed">
+              {project.overview}
+            </p>
+          </div>
+
           {/* Problem / Solution / Result Structured Breakdown */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/70 dark:border-slate-800">
@@ -205,15 +215,17 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               <span>GitHub Repo</span>
             </a>
 
-            <a
-              href={project.liveDemoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 transition-colors"
-            >
-              <ExternalLink className="w-3.5 h-3.5" />
-              <span>Live Demo / Details</span>
-            </a>
+            {project.demoAvailable && (
+              <a
+                href={project.liveDemoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 transition-colors"
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Live Demo</span>
+              </a>
+            )}
           </div>
 
           <button
