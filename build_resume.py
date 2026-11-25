@@ -1,4 +1,4 @@
-﻿import pymupdf, shutil, os
+import pymupdf, shutil, os
 
 html = """
 <!DOCTYPE html>
@@ -9,7 +9,7 @@ html = """
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: #0f172a;
     font-size: 8.0pt;
-    line-height: 1.27;
+    line-height: 1.25;
     margin: 0;
     padding: 0;
     background: #fff;
@@ -17,24 +17,24 @@ html = """
   
   .header {
     text-align: center;
-    margin-bottom: 3px;
+    margin-bottom: 3.5px;
   }
   .name {
-    font-size: 15.5pt;
+    font-size: 16.5pt;
     font-weight: 800;
     letter-spacing: 0.8px;
     color: #090d16;
-    margin-bottom: 1.5px;
+    margin-bottom: 2px;
   }
   .role {
-    font-size: 9.2pt;
+    font-size: 9.0pt;
     font-weight: 700;
     color: #1d4ed8;
     letter-spacing: 1.1px;
-    margin-bottom: 2.5px;
+    margin-bottom: 2px;
   }
   .contact {
-    font-size: 8.0pt;
+    font-size: 7.9pt;
     color: #334155;
   }
   .contact a {
@@ -44,24 +44,24 @@ html = """
   }
   .sep {
     color: #94a3b8;
-    margin: 0 5px;
+    margin: 0 4px;
   }
   
   .section-title {
-    font-size: 8.8pt;
+    font-size: 8.6pt;
     font-weight: 800;
     color: #090d16;
     text-transform: uppercase;
     letter-spacing: 0.6px;
     border-bottom: 1.3px solid #0f172a;
     padding-bottom: 1px;
-    margin-top: 4.5px;
-    margin-bottom: 2.5px;
+    margin-top: 4px;
+    margin-bottom: 2px;
   }
   
   .summary {
-    font-size: 7.9pt;
-    line-height: 1.27;
+    font-size: 7.8pt;
+    line-height: 1.25;
     text-align: justify;
     color: #1e293b;
   }
@@ -70,12 +70,12 @@ html = """
   }
 
   .skills-box {
-    font-size: 7.8pt;
-    line-height: 1.25;
+    font-size: 7.7pt;
+    line-height: 1.23;
     color: #1e293b;
   }
   .skills-box div {
-    margin-bottom: 1.2px;
+    margin-bottom: 1px;
   }
   .skills-box strong {
     color: #090d16;
@@ -85,7 +85,7 @@ html = """
   .edu-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 8.0pt;
+    font-size: 7.9pt;
   }
   .edu-table td {
     padding: 0.5px 0;
@@ -98,10 +98,10 @@ html = """
     font-weight: 600;
   }
   .coursework {
-    font-size: 7.5pt;
+    font-size: 7.4pt;
     color: #475569;
     margin-top: 0.5px;
-    line-height: 1.24;
+    line-height: 1.21;
   }
 
   .project-table {
@@ -119,7 +119,7 @@ html = """
   .project-right {
     text-align: right;
     white-space: nowrap;
-    font-size: 7.9pt;
+    font-size: 7.8pt;
     font-weight: 700;
     padding-left: 8px;
   }
@@ -128,21 +128,21 @@ html = """
     text-decoration: none;
   }
   .project-title {
-    font-size: 8.4pt;
+    font-size: 8.3pt;
     font-weight: 700;
     color: #090d16;
   }
   .project-tech {
-    font-size: 7.6pt;
+    font-size: 7.5pt;
     font-weight: 500;
     color: #2563eb;
   }
   .project-desc {
-    font-size: 7.9pt;
-    line-height: 1.26;
+    font-size: 7.8pt;
+    line-height: 1.24;
     color: #1e293b;
-    margin-top: 1px;
-    margin-bottom: 1.5px;
+    margin-top: 0.8px;
+    margin-bottom: 1.2px;
     text-align: justify;
   }
   .project-desc strong {
@@ -151,13 +151,13 @@ html = """
   .project-bullets {
     margin: 0;
     padding-left: 12px;
-    font-size: 7.7pt;
-    line-height: 1.23;
+    font-size: 7.6pt;
+    line-height: 1.21;
     color: #334155;
-    margin-bottom: 2.8px;
+    margin-bottom: 2.5px;
   }
   .project-bullets li {
-    margin-bottom: 0.3px;
+    margin-bottom: 0.2px;
   }
   .project-bullets strong {
     color: #090d16;
@@ -167,11 +167,11 @@ html = """
   .honors-list {
     margin: 0;
     padding-left: 12px;
-    font-size: 7.8pt;
-    line-height: 1.25;
+    font-size: 7.7pt;
+    line-height: 1.23;
   }
   .honors-list li {
-    margin-bottom: 1.6px;
+    margin-bottom: 1.4px;
     color: #1e293b;
   }
   .honors-list strong {
@@ -184,7 +184,7 @@ html = """
 
 <div class="header">
   <div class="name">ABHINAV TRIPATHI</div>
-  <div class="role">SOFTWARE ENGINEER INTERN</div>
+  
   <div class="contact">
     Lucknow, India <span class="sep">&bull;</span>
     <a href="mailto:at84004630@gmail.com">at84004630@gmail.com</a> <span class="sep">&bull;</span>
@@ -195,17 +195,17 @@ html = """
 
 <div class="section-title">PROFESSIONAL SUMMARY</div>
 <div class="summary">
-  Forward Deployed &amp; Systems Engineering candidate with hands-on experience building high-performance backend microservices, event-driven streaming pipelines, and containerized systems in <strong>Python, Java, and TypeScript</strong>. Skilled in relational database schema design, RESTful APIs, distributed debugging, and enterprise data privacy compliance. Proven track record of developing resilient technical solutions recognized across national hackathons (<strong>Rank 78/1,400 in Catalyst AI</strong>, SBI Global Fintech Fest). Passionate about continuous learning, foundational problem solving, and automated testing.
+  Software Engineer &amp; Systems Engineering candidate with hands-on experience building high-performance backend microservices, event-driven streaming pipelines, on-device AI platforms, and containerized architectures in <strong>Python, TypeScript, and Rust</strong>. Skilled in multi-agent orchestration (LangGraph), relational schema design, distributed incident diagnostics, and enterprise data privacy compliance. Proven track record of developing resilient technical solutions recognized across national hackathons (<strong>Rank 78/1,400 in Catalyst AI</strong>, SBI Global Fintech Fest shortlist, IBM Bob 2.0).
 </div>
 
 <div class="section-title">TECHNICAL SKILLS</div>
 <div class="skills-box">
-  <div><strong>Programming Languages:</strong> Python (AsyncIO, OOP, Scripting), Java (Core Java, OOP, Collections), TypeScript, JavaScript, SQL, Rust</div>
-  <div><strong>Core Computer Science:</strong> Data Structures &amp; Algorithms (Arrays, Strings, Two Pointers, Binary Search, Recursion, Sorting), Object-Oriented Design, Time &amp; Space Complexity</div>
-  <div><strong>Cloud &amp; DevOps:</strong> Docker, Containerization, Google Cloud Platform (Cloud Run, Cloud Storage, Pub/Sub), CI/CD (GitHub Actions), Linux/Unix CLI, Bash</div>
-  <div><strong>Systems &amp; Web Architecture:</strong> FastAPI, RESTful APIs, Next.js, Server-Sent Events (SSE), WebSockets, Microservices, JSON Schema, Redis (Caching)</div>
-  <div><strong>Databases &amp; Storage:</strong> PostgreSQL, MySQL, SQLite, Relational Database Design, Query Optimization, Indexing, SQLAlchemy ORM, ACID Transactions</div>
-  <div><strong>Software Engineering &amp; Reliability:</strong> Automated Testing (PyTest), Code Reviews &amp; Style Guidelines, Incident Diagnostics &amp; Bug Triaging, Technical Documentation, Git, GitHub</div>
+  <div><strong>Programming Languages:</strong> Python (FastAPI, AsyncIO, OOP), TypeScript, JavaScript, Rust, Java (Core Java, Collections), Dart, SQL</div>
+  <div><strong>Core Computer Science:</strong> Data Structures &amp; Algorithms (Arrays, Strings, Two Pointers, Binary Search, Recursion, Sorting), Object-Oriented Design, Complexity Analysis</div>
+  <div><strong>AI, Systems &amp; Web Architecture:</strong> Google Gemini 1.5 Flash, LangGraph Multi-Agent Workflows, Next.js 14/15, RESTful APIs, SSE Streaming, WebSockets, Edge AI (Qualcomm Hexagon NPU)</div>
+  <div><strong>Cloud, DevOps &amp; Containers:</strong> Docker, Multi-Stage Builds, Docker Compose, GitHub Actions (CI/CD), Vercel, Firebase, Linux/Unix CLI, Bash</div>
+  <div><strong>Databases &amp; Web3:</strong> PostgreSQL, SQLite, SQLAlchemy ORM, ACID Transactions, Solana, Anchor Smart Contracts, Switchboard Oracles</div>
+  <div><strong>Software Engineering &amp; Reliability:</strong> Automated Testing (PyTest, Jest), Code Reviews &amp; Style Guidelines, Incident Bug Triaging, Technical Documentation, Git, GitHub</div>
 </div>
 
 <div class="section-title">EDUCATION</div>
@@ -229,27 +229,46 @@ html = """
   <tr>
     <td class="project-left">
       <span class="project-title">SAATHI &mdash; Automated Banking Grievance &amp; Dispute Resolution Microservice</span>
-      <span class="project-tech">[Google Gemini 1.5, Python, FastAPI, AsyncIO, SSE, Docker]</span>
+      <span class="project-tech">[Google Gemini 1.5 Flash, Python, FastAPI, LangGraph, SSE, Docker]</span>
     </td>
     <td class="project-right">
-      <a href="https://github.com/at84004630-del">GitHub</a> &bull; <a href="https://github.com/at84004630-del">GFF Shortlist</a>
+      <a href="https://github.com/at84004630-del/SAATHI">GitHub</a> &bull; <a href="https://github.com/at84004630-del/SAATHI">Architecture</a>
     </td>
   </tr>
 </table>
 <div class="project-desc">
-  <strong>Project Overview:</strong> Autonomous banking triage platform that automates failed UPI payment dispute resolution without manual intervention.
+  <strong>Project Overview:</strong> Autonomous banking triage platform shortlisted at <strong>SBI Hackathon @ Global Fintech Fest 2026</strong>.
 </div>
 <ul class="project-bullets">
-  <li>Engineered a multi-agent orchestrator in Python powered by <strong>Google Gemini 1.5 Flash</strong> with FastAPI SSE streaming, reducing simulated dispute turnaround to <strong>4.2 minutes</strong>.</li>
-  <li>Designed deterministic state-machine validation and relational schemas with strict data-masking mechanisms compliant with DPDPA 2023 principles.</li>
-  <li>Packaged services with Docker and configured integration tests verifying transactional reconciliation under simulated network failures.</li>
+  <li>Engineered a multi-agent supervisor orchestrator in Python powered by <strong>Google Gemini 1.5 Flash</strong> and <strong>LangGraph</strong>, reducing simulated dispute turnaround to <strong>4.2 minutes</strong>.</li>
+  <li>Designed deterministic state-machine guardrails (Guardian agent) and relational schemas with strict data-masking compliant with DPDPA 2023 and RBI guidelines.</li>
+  <li>Packaged services with Docker and configured FastAPI Server-Sent Events (SSE) streaming real-time agent telemetry to a Next.js command console.</li>
+</ul>
+
+<table class="project-table">
+  <tr>
+    <td class="project-left">
+      <span class="project-title">Wellness &mdash; Intelligent Healthcare &amp; Medication Management Platform</span>
+      <span class="project-tech">[Next.js 14, TypeScript, Tailwind CSS, Automated Testing, Role-Based Access]</span>
+    </td>
+    <td class="project-right">
+      <a href="https://wellness-psi-silk.vercel.app/">Live Demo</a> &bull; <a href="https://github.com/at84004630-del/Wellness">GitHub</a>
+    </td>
+  </tr>
+</table>
+<div class="project-desc">
+  <strong>Project Overview:</strong> Role-based elderly care and medication compliance platform awarded <strong>Rank 78 / 1,400 in Catalyst AI Hackathon</strong>.
+</div>
+<ul class="project-bullets">
+  <li>Engineered an intelligent drug-conflict detection system and medication adherence tracking pipeline verified across a <strong>22-test automated suite</strong>.</li>
+  <li>Architected multi-role command centers (Patients, Caregivers, Doctors) with error boundaries, strict input sanitization, and sub-second UI responsiveness.</li>
 </ul>
 
 <table class="project-table">
   <tr>
     <td class="project-left">
       <span class="project-title">MedTrace &mdash; Distributed Incident Diagnostics &amp; Bug Triaging Platform</span>
-      <span class="project-tech">[Python, Next.js, REST APIs, PyTest, Docker, CI/CD]</span>
+      <span class="project-tech">[TypeScript, Next.js, REST APIs, Docker, CI/CD, Error Diagnostics]</span>
     </td>
     <td class="project-right">
       <a href="https://medtrace-ai.vercel.app/">Live Demo</a> &bull; <a href="https://github.com/at84004630-del/MedTrace">GitHub</a>
@@ -257,19 +276,18 @@ html = """
   </tr>
 </table>
 <div class="project-desc">
-  <strong>Project Overview:</strong> Healthcare software diagnostics platform that intercepts runtime errors to synthesize safe, automated test fixtures.
+  <strong>Project Overview:</strong> Healthcare software diagnostics platform that intercepts runtime errors to synthesize reproducible test cases (IBM Bob 2.0 Hackathon).
 </div>
 <ul class="project-bullets">
-  <li>Intercepts runtime error logs and stack traces across distributed services to synthesize minimal reproducible test cases in <strong>under 90 seconds</strong>.</li>
-  <li>Built automated test verification achieving <strong>100% test pass rate across 16 test suites</strong>, integrating log sanitation to prevent sensitive PHI data exposure.</li>
-  <li>Configured containerized multi-stage Docker deployment and GitHub Actions CI workflow for automated linting and integration testing.</li>
+  <li>Intercepts distributed runtime errors and stack traces to synthesize minimal reproducible test fixtures in <strong>under 90 seconds</strong>.</li>
+  <li>Configured containerized multi-stage Docker deployment and automated GitHub Actions CI workflow for linting, security, and build verification.</li>
 </ul>
 
 <table class="project-table">
   <tr>
     <td class="project-left">
       <span class="project-title">MicroShield &mdash; Decentralized Parametric Flight Insurance Protocol</span>
-      <span class="project-tech">[Solana, Rust, Anchor, Switchboard Oracle, USDC, Docker]</span>
+      <span class="project-tech">[Solana, Rust, Anchor, Switchboard Oracle, USDC, Next.js]</span>
     </td>
     <td class="project-right">
       <a href="https://micro-sheild-test.vercel.app/">Live Demo</a> &bull; <a href="https://github.com/at84004630-del/MicroShield">GitHub</a>
@@ -277,55 +295,36 @@ html = """
   </tr>
 </table>
 <div class="project-desc">
-  <strong>Project Overview:</strong> Decentralized Solana protocol that executes programmatic flight delay insurance claims directly to user wallets.
+  <strong>Project Overview:</strong> Decentralized Solana protocol executing instant programmatic flight delay insurance payouts to user wallets.
 </div>
 <ul class="project-bullets">
-  <li>Built Anchor smart contracts on Solana locking USDC premiums in non-custodial Program Derived Address (PDA) escrow vaults.</li>
-  <li>Integrated Switchboard Oracle feeds to verify real-time flight telemetry on-chain, automatically executing payouts without paperwork.</li>
+  <li>Built Anchor smart contracts in Rust locking USDC premiums into non-custodial Program Derived Address (PDA) escrow vaults on Solana devnet.</li>
+  <li>Integrated Switchboard Oracle feeds to verify real-time flight telemetry on-chain, automatically executing claim settlements without paperwork.</li>
 </ul>
 
 <table class="project-table">
   <tr>
     <td class="project-left">
-      <span class="project-title">StaffPulse &mdash; Enterprise Workforce &amp; Automated Payroll Management Backend</span>
-      <span class="project-tech">[Python, Java, SQL, Relational Schema Design, Security]</span>
+      <span class="project-title">MediSense Edge &mdash; On-Device Medical AI Suite (Qualcomm AI Hub)</span>
+      <span class="project-tech">[Snapdragon X Elite, Hexagon NPU (45 TOPS), Qualcomm AI Hub, React 19, TypeScript]</span>
     </td>
     <td class="project-right">
-      <a href="https://staffpulse-hr-2024.web.app/">Live Demo</a> &bull; <a href="https://github.com/at84004630-del/staffpulse">GitHub</a>
+      <a href="https://github.com/at84004630-del/medisense-edge">GitHub</a> &bull; <a href="https://github.com/at84004630-del/medisense-edge">Submission</a>
     </td>
   </tr>
 </table>
 <div class="project-desc">
-  <strong>Project Overview:</strong> Smart attendance and payroll backend managing complex work shifts and automated salary slips.
+  <strong>Project Overview:</strong> On-device clinical intelligence suite developed for the <strong>Qualcomm Snapdragon AI Lab Hackathon</strong>.
 </div>
 <ul class="project-bullets">
-  <li>Architected split-shift allocation algorithms managing overlapping 12-hour shifts with concurrency controls and normalized SQL schemas.</li>
-  <li>Automated overtime wage calculation tiers and generated tamper-proof employee payslip PDFs dynamically in <strong>under 500ms</strong>.</li>
-</ul>
-
-<table class="project-table">
-  <tr>
-    <td class="project-left">
-      <span class="project-title">AORA AI &mdash; Empathetic Conversational AI &amp; Real-Time Intervention Assistant</span>
-      <span class="project-tech">[Next.js, React, TypeScript, REST APIs, Streaming LLMs]</span>
-    </td>
-    <td class="project-right">
-      <a href="https://aora-ai-two.vercel.app/">Live Demo</a> &bull; <a href="https://github.com/at84004630-del">GitHub</a>
-    </td>
-  </tr>
-</table>
-<div class="project-desc">
-  <strong>Project Overview:</strong> Conversational AI assistant that offers empathetic emotional support and proactive mental wellness interventions.
-</div>
-<ul class="project-bullets">
-  <li>Engineered a responsive Next.js frontend with streaming dialogue states and client-side care detection heuristics for sub-second responses.</li>
-  <li>Interfaced with contextual conversational AI models using strict privacy controls, safe dialogue heuristics, and zero data retention.</li>
+  <li>Engineered privacy-first clinical AI running 100% locally on the Hexagon NPU with <strong>0 KB cloud data egress</strong> for strict HIPAA/GDPR offline compliance.</li>
+  <li>Optimized neural model pipelines via Qualcomm AI Hub targeting Snapdragon ARM64 architectures for real-time edge medical diagnostics.</li>
 </ul>
 
 <div class="section-title">HONORS, CERTIFICATIONS &amp; LEADERSHIP</div>
 <ul class="honors-list">
-  <li><strong>Rank 78 / 1,400 Teams (Top 5.5%) &mdash; Catalyst AI Hackathon:</strong> Outperformed 1,320+ competing engineering teams nationwide, evaluated on multi-agent execution speed, architectural resilience, and low-latency API throughput.</li>
-  <li><strong>National Shortlist &mdash; SBI Hackathon @ Global Fintech Fest 2026:</strong> Shortlisted into Idea Submission phase by NPCI, FCC, and HackCulture from thousands of nationwide participants for Gemini-powered SAATHI banking platform.</li>
+  <li><strong>National Shortlist &mdash; SBI Hackathon @ Global Fintech Fest 2026:</strong> Shortlisted into Idea Submission phase by NPCI, FCC, and HackCulture from thousands of nationwide participants for Gemini-powered SAATHI banking grievance platform.</li>
+  <li><strong>Rank 78 / 1,400 Teams (Top 5.5%) &mdash; Catalyst AI Hackathon:</strong> Outperformed 1,320+ competing engineering teams nationwide for developing <strong>Wellness</strong>, evaluated on architectural resilience and low-latency API throughput.</li>
   <li><strong>Certificate of Completion &amp; Excellence &mdash; IBM Bob 2.0 Hackathon:</strong> Awarded for outstanding performance, attendance, and submitting MedTrace incident triaging platform (Cert ID: CMULAQ6XC00H7S601WX38KT9U).</li>
   <li><strong>Runner Up &mdash; Amiphoria Technical Hackathon 2026:</strong> Runner Up in inter-university technical coding competition in 2026 at Amity University.</li>
   <li><strong>Structured Algorithmic Training &mdash; Apna College:</strong> Actively completing structured curriculum in foundational Data Structures &amp; Algorithms (Arrays, Strings, Two Pointers, Binary Search, Recursion) in Java with focus on optimal time &amp; space complexity.</li>
@@ -333,13 +332,15 @@ html = """
 
 </body>
 </html>
+
 """
 
-pdf_path = "C:/Users/ABHINAV TRIPATHI/portfolio/public/Abhinav_Tripathi_Resume.pdf"
+
+pdf_path = "C:/Users/ABHINAV TRIPATHI/Downloads/New folder/Abhinav_Tripathi_Resume.pdf"
 
 story = pymupdf.Story(html=html)
 writer = pymupdf.DocumentWriter(pdf_path)
-rect = pymupdf.Rect(28, 20, 584, 772)
+rect = pymupdf.Rect(28, 18, 584, 774)
 
 more = 1
 pages = 0
@@ -356,35 +357,32 @@ assert pages == 1, f"ERROR: Expected 1 page, got {pages} pages!"
 doc = pymupdf.open(pdf_path)
 page = doc[0]
 
-def add_link(text_query, url, y_min=0, y_max=800):
+def add_link(text_query, url):
     rects = page.search_for(text_query)
     for r in rects:
-        if y_min <= r.y0 <= y_max:
-            hit_box = pymupdf.Rect(r.x0 - 2, r.y0 - 2, r.x1 + 2, r.y1 + 2)
-            page.insert_link({"kind": pymupdf.LINK_URI, "from": hit_box, "uri": url})
-            return True
+        hit_box = pymupdf.Rect(r.x0 - 2, r.y0 - 2, r.x1 + 2, r.y1 + 2)
+        page.insert_link({"kind": pymupdf.LINK_URI, "from": hit_box, "uri": url})
+        return True
     return False
 
-add_link("at84004630@gmail.com", "mailto:at84004630@gmail.com", 30, 90)
-add_link("linkedin.com/in/abhinav-tripathi", "https://www.linkedin.com/in/abhinav-tripathi-22236a2a6/", 30, 90)
-add_link("github.com/at84004630-del", "https://github.com/at84004630-del", 30, 90)
+add_link("at84004630@gmail.com", "mailto:at84004630@gmail.com")
+add_link("linkedin.com/in/abhinav-tripathi", "https://www.linkedin.com/in/abhinav-tripathi-22236a2a6/")
+add_link("github.com/at84004630-del", "https://github.com/at84004630-del")
 
 projects_info = [
-    ("SAATHI", [("GitHub", "https://github.com/at84004630-del"), ("GFF Shortlist", "https://github.com/at84004630-del")]),
+    ("SAATHI", [("GitHub", "https://github.com/at84004630-del"), ("Architecture", "https://github.com/at84004630-del")]),
+    ("Wellness", [("Live Demo", "https://wellness-ai.vercel.app/"), ("GitHub", "https://github.com/at84004630-del/wellness")]),
     ("MedTrace", [("Live Demo", "https://medtrace-ai.vercel.app/"), ("GitHub", "https://github.com/at84004630-del/MedTrace")]),
     ("MicroShield", [("Live Demo", "https://micro-sheild-test.vercel.app/"), ("GitHub", "https://github.com/at84004630-del/MicroShield")]),
-    ("Pulse", [("Live Demo", "https://staffpulse-hr-2024.web.app/"), ("GitHub", "https://github.com/at84004630-del/staffpulse")]),
-    ("AORA AI", [("Live Demo", "https://aora-ai-two.vercel.app/"), ("GitHub", "https://github.com/at84004630-del")]),
+    ("MediSense", [("GitHub", "https://github.com/at84004630-del/medisense-edge"), ("Submission", "https://github.com/at84004630-del/medisense-edge")]),
 ]
 
 for title, links in projects_info:
     title_rects = page.search_for(title)
     if title_rects:
         y_center = title_rects[0].y0
-        y_min = y_center - 10
-        y_max = y_center + 15
         for link_text, link_url in links:
-            add_link(link_text, link_url, y_min, y_max)
+            add_link(link_text, link_url)
 
 doc.save(pdf_path, incremental=True, encryption=pymupdf.PDF_ENCRYPT_KEEP)
 
@@ -393,18 +391,15 @@ preview_path = "C:/Users/ABHINAV TRIPATHI/Downloads/New folder/resume_preview.pn
 pix.save(preview_path)
 print(f"Saved preview PNG to {preview_path}")
 
-workspace_pdf = "C:/Users/ABHINAV TRIPATHI/Downloads/New folder/Abhinav_Tripathi_Resume.pdf"
 desktop_pdf = "C:/Users/ABHINAV TRIPATHI/OneDrive/Desktop/Abhinav_Tripathi_Software_Engineer_Resume.pdf"
-new_folder_3_pdf = "C:/Users/ABHINAV TRIPATHI/Downloads/New folder (3)/Abhinav_Tripathi_SWE_Resume.pdf"
+portfolio_pdf = "C:/Users/ABHINAV TRIPATHI/portfolio/public/Abhinav_Tripathi_Resume.pdf"
 
-shutil.copyfile(pdf_path, workspace_pdf)
-print(f"Copied PDF to {workspace_pdf}")
 if os.path.exists("C:/Users/ABHINAV TRIPATHI/OneDrive/Desktop"):
     shutil.copyfile(pdf_path, desktop_pdf)
     print(f"Copied PDF to {desktop_pdf}")
-if os.path.exists("C:/Users/ABHINAV TRIPATHI/Downloads/New folder (3)"):
-    shutil.copyfile(pdf_path, new_folder_3_pdf)
-    print(f"Copied PDF to {new_folder_3_pdf}")
+if os.path.exists("C:/Users/ABHINAV TRIPATHI/portfolio/public"):
+    shutil.copyfile(pdf_path, portfolio_pdf)
+    print(f"Copied PDF to {portfolio_pdf}")
 
 doc.close()
-print("Apna College bullet integrated successfully!")
+print("Compilation and sync completed successfully!")
